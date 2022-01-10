@@ -1,7 +1,8 @@
 Future<void> main() async {
   // dù đối tượng testingFutrue được khai báo trước thì hàm main vẫn sẽ hiển thị print trước ở dưới console
   // bởi vì testingFuture bị deplay trước khi hàm main print
-  // testingFuture();
+  print('hãy chờ đợi trong ít phút');
+  testingFuture();
   // testingFutureError();
   
   // print('Testing!!!');
@@ -14,13 +15,13 @@ Future<void> main() async {
   // Bài 2
   // print(await reportLogAmount());
   // try-catch
-  print(await testing());
+  // print(await testing());
 }
 
 // Completing with a value
-// Future<void>  testingFuture(){
-//   return Future.delayed(const Duration(seconds: 2),() => print('Hello! tôi đang làm ví dụ về future'));
-// }
+Future<void>  testingFuture(){
+  return Future.delayed(const Duration(seconds: 2),() => print('Hello! tôi đang làm ví dụ về future'));
+}
 
 // Completing with an error
 // Future<void> testingFutureError(){
@@ -55,20 +56,20 @@ Future<void> main() async {
 //   return 'User role: $test';
 // }
 
-// Bài 2:
-Future<int> fetchLogAmount() => Future.delayed(const Duration(seconds: 2), () => 3);
-Future<String> reportLogAmount() async {
-  var test = await fetchLogAmount();
-  return 'Total amount of logins: $test';
-}
-// sử dụng try-catch
-Future<String> testing() async{
-  try {
-    var tt = await testTryCatch();
-    return('${tt}');
-  } catch (err) {
-    return err.toString();
-  }
-}
+// // Bài 2:
+// Future<int> fetchLogAmount() => Future.delayed(const Duration(seconds: 2), () => 3);
+// Future<String> reportLogAmount() async {
+//   var test = await fetchLogAmount();
+//   return 'Total amount of logins: $test';
+// }
+// // sử dụng try-catch
+// Future<String> testing() async{
+//   try {
+//     var tt = await testTryCatch();
+//     return('${tt}');
+//   } catch (err) {
+//     return err.toString();
+//   }
+// }
 
-Future<String> testTryCatch() => Future.delayed(const Duration(seconds: 2), () => throw Exception('Lỗi game rồi Hihi!!'));
+// Future<String> testTryCatch() => Future.delayed(const Duration(seconds: 2), () => throw Exception('Lỗi game rồi Hihi!!'));
