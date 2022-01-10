@@ -1,9 +1,11 @@
+import 'package:test/test.dart';
+
 Future<void> main() async {
   // dù đối tượng testingFutrue được khai báo trước thì hàm main vẫn sẽ hiển thị print trước ở dưới console
   // bởi vì testingFuture bị deplay trước khi hàm main print
   print('hãy chờ đợi trong ít phút');
-  testingFuture();
-  // testingFutureError();
+  // testingFuture();
+  testingFutureError();
   
   // print('Testing!!!');
   // print(testingSync());
@@ -18,15 +20,15 @@ Future<void> main() async {
   // print(await testing());
 }
 
-// Completing with a value
-Future<void>  testingFuture(){
-  return Future.delayed(const Duration(seconds: 2),() => print('Hello! tôi đang làm ví dụ về future'));
-}
+// // Completing with a value
+// Future<void>  testingFuture(){
+//   return Future.delayed(const Duration(seconds: 2),() => print('Hello! tôi đang làm ví dụ về future'));
+// }
 
 // Completing with an error
-// Future<void> testingFutureError(){
-//   return Future.delayed(const Duration(seconds: 2),() => throw Exception('Logout faild: User Id is invalid'));
-// }
+Future<void> testingFutureError(){
+  return Future.delayed(const Duration(seconds: 3), ()=> throw Exception('co loi xay ra r nha!'));
+}
 
 // sycnhronous functions
 // String testingSync() {
